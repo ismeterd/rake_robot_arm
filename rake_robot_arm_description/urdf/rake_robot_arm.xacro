@@ -1,0 +1,281 @@
+<?xml version="1.0" ?>
+<robot name="rake_robot_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rake_robot_arm_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rake_robot_arm_description)/urdf/rake_robot_arm.trans" />
+<xacro:include filename="$(find rake_robot_arm_description)/urdf/rake_robot_arm.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.005428619003295954 -0.008613437067487122 0.026559408634131962"/>
+    <mass value="0.6833341012676234"/>
+    <inertia ixx="0.000775" ixy="-0.0" ixz="-0.0" iyy="0.000775" iyz="-0.0" izz="0.00123"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shell_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.809967040642459e-07 -4.3706748690044983e-07 0.0035004086341318685"/>
+    <mass value="0.0995024703119412"/>
+    <inertia ixx="9.9e-05" ixy="0.0" ixz="0.0" iyy="9.9e-05" iyz="0.0" izz="0.000197"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005429 0.008613 -0.053059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/shell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005429 0.008613 -0.053059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/shell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="shoulder_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.018487163221973895 -3.702377545759805e-07 0.0361504193632233"/>
+    <mass value="0.490155405617113"/>
+    <inertia ixx="0.001074" ixy="-0.0" ixz="0.000233" iyy="0.000945" iyz="-0.0" izz="0.001258"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005429 0.008613 -0.060059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005429 0.008613 -0.060059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/shoulder_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lower_arm_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.036383643610992306 0.09730146610324698 0.008456243290924675"/>
+    <mass value="1.4008276782067164"/>
+    <inertia ixx="0.021389" ixy="0.001243" ixz="0.000108" iyy="0.001718" iyz="-0.001627" izz="0.020297"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.069829 0.008613 -0.125059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/lower_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.069829 0.008613 -0.125059"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/lower_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="upper_arm_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.06963666934263239 0.09281890879904042 -0.007680587997038496"/>
+    <mass value="1.2281524390149194"/>
+    <inertia ixx="0.008301" ixy="-0.002974" ixz="0.000247" iyy="0.003124" iyz="0.000597" izz="0.010281"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.105829 -0.317358 -0.153387"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/upper_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.105829 -0.317358 -0.153387"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/upper_arm_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_lower_part_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03999961900329575 2.3144489547100022e-07 0.04330708816134787"/>
+    <mass value="2.563698377041008"/>
+    <inertia ixx="0.003146" ixy="-0.0" ixz="0.0" iyy="0.003118" iyz="-0.0" izz="0.001428"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.034171 -0.540291 -0.134686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/hand_lower_part_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.034171 -0.540291 -0.134686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/hand_lower_part_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wrist_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.809967041258286e-07 2.3144489724735706e-07 0.03870010593441692"/>
+    <mass value="1.4230730046613598"/>
+    <inertia ixx="0.000919" ixy="0.0" ixz="0.0" iyy="0.000919" iyz="0.0" izz="0.000582"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005829 -0.540291 -0.223686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/wrist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005829 -0.540291 -0.223686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/wrist_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="hand_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.809967041327675e-07 2.3144489702531246e-07 0.020684138620549408"/>
+    <mass value="0.6697341448982068"/>
+    <inertia ixx="0.000446" ixy="0.0" ixz="0.0" iyy="0.000118" iyz="-0.0" izz="0.000429"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005829 -0.540291 -0.298686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005829 -0.540291 -0.298686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/hand_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component21_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.809967041371043e-07 -0.008133022057808581 0.03985467828400907"/>
+    <mass value="0.18077843580085987"/>
+    <inertia ixx="0.000128" ixy="0.0" ixz="0.0" iyy="0.000106" iyz="-3.3e-05" izz="2.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005829 -0.499291 -0.335686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/Component21_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005829 -0.499291 -0.335686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/Component21_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="Component20_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="3.8099670410154246e-07 0.008133484947602798 0.03985467828400896"/>
+    <mass value="0.18077843580086025"/>
+    <inertia ixx="0.000128" ixy="0.0" ixz="-0.0" iyy="0.000106" iyz="3.3e-05" izz="2.5e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.005829 -0.581291 -0.335686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/Component20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.005829 -0.581291 -0.335686"/>
+    <geometry>
+      <mesh filename="package://rake_robot_arm_description/meshes/Component20_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.005429 -0.008613 0.053059"/>
+  <parent link="base_link"/>
+  <child link="shell_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rigid2" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.007"/>
+  <parent link="shell_1"/>
+  <child link="shoulder_1"/>
+</joint>
+
+<joint name="Rev3" type="revolute">
+  <origin rpy="0 0 0" xyz="-0.0644 0.0 0.065"/>
+  <parent link="shoulder_1"/>
+  <child link="lower_arm_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+  <limit effort="100" lower="0.0" upper="3.141593" velocity="100"/>
+</joint>
+
+<joint name="Rev6" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.036 0.325971 0.028328"/>
+  <parent link="lower_arm_1"/>
+  <child link="upper_arm_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+</joint>
+
+<joint name="Rev15" type="continuous">
+  <origin rpy="0 0 0" xyz="0.14 0.222933 -0.018701"/>
+  <parent link="upper_arm_1"/>
+  <child link="hand_lower_part_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+</joint>
+
+<joint name="Rev16" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.04 0.0 0.089"/>
+  <parent link="hand_lower_part_1"/>
+  <child link="wrist_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Rigid19" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.075"/>
+  <parent link="wrist_1"/>
+  <child link="hand_1"/>
+</joint>
+
+<joint name="Rev20" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -0.041 0.037"/>
+  <parent link="hand_1"/>
+  <child link="Component21_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+  <limit effort="100" lower="-0.174533" upper="0.785398" velocity="100"/>
+</joint>
+
+<joint name="Rev21" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 0.041 0.037"/>
+  <parent link="hand_1"/>
+  <child link="Component20_1"/>
+  <axis xyz="1.0 -0.0 -0.0"/>
+  <limit effort="100" lower="-0.785398" upper="0.174533" velocity="100"/>
+</joint>
+
+</robot>
